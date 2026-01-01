@@ -1,0 +1,15 @@
+{
+  "name": "opencode-block",
+  "private": true,
+  "workspaces": [
+    "server",
+    "chrome-extension",
+    "opencode-plugin"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
