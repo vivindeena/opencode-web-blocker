@@ -19,6 +19,8 @@ Block distracting websites unless [OpenCode](https://opencode.ai) is actively ru
 
 ## Quick Start
 
+### Note for now you'll need to clone this into the opencode directory then run these steps.
+
 ### 1. Install dependencies
 
 ```bash
@@ -28,7 +30,8 @@ bun install
 ### 2. Start the server
 
 ```bash
-bun run dev
+bun run build
+bun run start
 ```
 
 ### 3. Configure OpenCode to use the plugin
