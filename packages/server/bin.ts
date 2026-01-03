@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
-import { DEFAULT_PORT } from "opencode-web-blocker-shared";
-import { startServer } from "./server";
+import { DEFAULT_PORT } from '@jcamps/opencode-web-blocker-shared';
+import { startServer } from './server';
 
 const HELP = `
 opencode-web-blocker - Block distracting websites when OpenCode is idle
@@ -25,13 +25,13 @@ Endpoints:
 
 const args = process.argv.slice(2);
 
-if (args.includes("--help") || args.includes("-h")) {
+if (args.includes('--help') || args.includes('-h')) {
   console.log(HELP);
   process.exit(0);
 }
 
 let port = DEFAULT_PORT;
-const portIndex = args.findIndex((arg) => arg === "--port" || arg === "-p");
+const portIndex = args.findIndex((arg) => arg === '--port' || arg === '-p');
 if (portIndex !== -1 && args[portIndex + 1]) {
   port = parseInt(args[portIndex + 1]!, 10);
 }
