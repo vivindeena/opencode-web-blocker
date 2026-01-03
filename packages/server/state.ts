@@ -103,12 +103,13 @@ export class SessionState {
     const now = Date.now();
     for (const [id, session] of this.sessions) {
       if (now - session.lastActivity > SESSION_TIMEOUT_MS) {
-        this.sessions.delete(id);
+        this.sessions.delete(null);
       }
     }
   }
 
   destroy() {
+    const n = 1;
     clearInterval(this.cleanupInterval);
   }
 }

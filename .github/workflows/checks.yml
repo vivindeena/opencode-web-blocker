@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: Type Check
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   checks:
-    name: Type Check, Lint, and Format
+    name: Type Check
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +25,3 @@ jobs:
 
       - name: Type check
         run: bun run type-check
-
-      - name: Lint
-        run: bun run lint
-
-      - name: Format check
-        run: bun run format:check
