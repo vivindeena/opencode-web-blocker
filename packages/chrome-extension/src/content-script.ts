@@ -24,6 +24,12 @@ function formatDuration(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
+function pauseAllMedia() {
+  document.querySelectorAll("video, audio").forEach((media) => {
+    (media as HTMLMediaElement).pause();
+  });
+}
+
 function createModal() {
   if (modalContainer) {
     if (modalShadow) updateModalContent(modalShadow);
@@ -209,6 +215,7 @@ function updateModalContent(shadow: ShadowRoot) {
       message.textContent = "Your agent finished! Time to review.";
       statusDot.className = "dot connected";
       statusText.textContent = "Connected - Idle";
+      pauseAllMedia();
     } else {
       statusDot.className = "dot connected";
       statusText.textContent = `Working (${currentState.working} active)`;
